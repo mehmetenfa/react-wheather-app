@@ -1,7 +1,12 @@
-import './App.css'
+import { Navbar, Input } from "./components/index"
 
 function App() {
-  return <div className="App">hello</div>
+  return (
+  <div>
+    <Navbar />
+    <Input />
+  </div>
+  )
 }
 
 export default App
