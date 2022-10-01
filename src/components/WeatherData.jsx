@@ -46,14 +46,32 @@ const WeatherData = ({ weatherData }) => {
                 unit=" km/h"
               />
             </div>
-            <div>
+            <div className='mt-3 flex gap-3'>
               <WeatherDetails
-                title="Wind"
+                title="Rise"
                 data={formatToLocalTime(
                     weatherData.sys.sunrise,
                     weatherData.timeZone, "hh:mm a"
                 )}
                 unit=" km/h"
+              />
+              <WeatherDetails
+                title="Set"
+                data={formatToLocalTime(
+                    weatherData.sys.sunset,
+                    weatherData.timeZone, "hh:mm a"
+                )}
+                unit=" km/h"
+              />
+              <WeatherDetails
+                title="High"
+                data={(((weatherData.main.temp_max - 31) * 5) / 9).toFixed(0)}
+                unit="°"
+              />
+              <WeatherDetails
+                title="Low"
+                data={(((weatherData.main.temp_min - 31) * 5) / 9).toFixed(0)}
+                unit="°"
               />
             </div>
           </div>
